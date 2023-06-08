@@ -185,7 +185,7 @@ class MainWindow(QMainWindow):
         con.commit()
 
     def get_path(self):
-        return 'C:\\ProgramData\\iAttend\\data\\database\\attendance_system.db'
+        return 'C:\\ProgramData\\iFaces\\database\\attendance_system.db'
 
     def get_tables(self):
         con = sqlite3.connect(self.get_path())
@@ -197,7 +197,7 @@ class MainWindow(QMainWindow):
         return details
 
     def backup_history(self):
-        path =Path('C:\\ProgramData\\iAttend\\data\\backup\\backup_history.txt')
+        path =Path('C:\\ProgramData\\iFaces\\backup\\backup_history.txt')
         path.touch(exist_ok=True)
         file = open(path)
         time =dt.now().time().strftime('%I:%M:%S %p')
@@ -262,7 +262,7 @@ class MainWindow(QMainWindow):
         table=self.ui.tableWidget.item(0,0)
         filename = self.ui.filename.text()
         date=dt.now().strftime('_%d_%B_%Y-%I_%M_%S_%p')
-        path = 'C:\\ProgramData\\iAttend\\data\\csv_export\\'+filename+date+'.csv'
+        path = 'C:\\ProgramData\\iFaces\\export\\'+filename+date+'.csv'
         if table and filename:
             details=self.query_database_for_data()
             data = pd.DataFrame(details)
@@ -635,8 +635,8 @@ class Splash_screen(QMainWindow):
         return details
 
     def create_program_data_dir(self):
-        root_dir = 'C:\\ProgramData\\iAttend\\data'
-        list =('csv_export','backup','images')
+        root_dir = 'C:\\ProgramData\\iFaces\\'
+        list =('export','backup','images','database')
         if not os.path.exists(root_dir):
             os.makedirs(root_dir)
         for item in list:
@@ -652,7 +652,7 @@ class Splash_screen(QMainWindow):
         db.close()
 
     def get_path(self):
-        return 'C:\\ProgramData\\iAttend\\data\\database\\attendance_system.db'
+        return 'C:\\ProgramData\\iFaces\\database\\attendance_system.db'
 
     def progress(self):
         global counter

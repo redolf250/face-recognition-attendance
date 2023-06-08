@@ -208,7 +208,7 @@ class MainWindow(QMainWindow):
             file.close()         
 
     def backup_database(self):
-        path='C:\\ProgramData\\iLecturers\\data\\backup'
+        path='C:\\ProgramData\\iFaces\\backup'
         if os.path.exists(path):
             shutil.copy2(self.get_path(),path)
             self.backup_history()

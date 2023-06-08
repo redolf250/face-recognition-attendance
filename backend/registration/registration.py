@@ -1,10 +1,7 @@
-
-import os
-import cv2
-import sqlite3
 from utils.sql import *
-import face_recognition
 from packages.pyqt import *
+from packages.system import *
+from packages.processing import *
 from packages.ui_files import Ui_Registration
 
 class Registration(QDialog):
@@ -25,14 +22,18 @@ class Registration(QDialog):
         self.shadow.setColor(QColor(230, 230, 230, 50))
         self.ui_registration.frame.setGraphicsEffect(self.shadow)
 
-        completer = QCompleter(self.read_text_file(self.resource_path('programs.txt')))
-        completer.setCaseSensitivity(Qt.CaseInsensitive)
-        self.ui_registration.reg_program.setCompleter(completer)
+       
 
         self.ui_registration.btn_reg_browse.clicked.connect(self.browse_files)
         self.ui_registration.btn_reg_register.clicked.connect(self.register_student)
         self.ui_registration.btn_reg_search.clicked.connect(self.search_student)
         self.ui_registration.btn_reg_delete.clicked.connect(self.delete_student)
+
+    def load_programs(self,file_path):
+        completer = QCompleter(self.read_text_file(file_path))
+        completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.ui_registration.reg_program.setCompleter(completer)
+        
 
     def resource_path(self,relative_path):
         path= os.path.abspath(os.path.join(os.path.dirname(__file__),relative_path)) 

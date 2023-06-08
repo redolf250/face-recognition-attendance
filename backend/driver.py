@@ -27,6 +27,7 @@ class MainWindow(QMainWindow):
         self.move(qtRectangle.topLeft())    
 
         self.ui.btn_close.clicked.connect(self.close)
+        self.ui.btn_close.clicked.connect(self.application_exit)
         self.ui.btn_minimize.clicked.connect(self.showMinimized)
         # self.ui.btn_maximize.clicked.connect(self.maximize_restore)
         self.ui.btn_clear_label.clicked.connect(self.loadUi_file)
@@ -42,6 +43,7 @@ class MainWindow(QMainWindow):
         self.program_dept.combo_box(self.get_tables())
 
         self.registration = Registration()
+        self.registration.load_programs(self.resource_path('programs.txt'))
         self.ui.btn_register.clicked.connect(lambda: self.registration.show())
 
         self.ui.btn_connect_detect.clicked.connect(self.start_webcam)
@@ -75,6 +77,11 @@ class MainWindow(QMainWindow):
         self.ui.session.setText(f"session@{self.time}")
         
         # ,QDateTime,QDate,QTime
+
+    def application_exit(self):
+        self.close()
+        self.registration.close()
+        self.program_dept.close()
 
     def resource_path(self,relative_path):
         path= os.path.abspath(os.path.join(os.path.dirname(__file__),relative_path)) 

@@ -48,7 +48,7 @@ class Registration(QDialog):
         return value
 
     def save_picture(self):
-        path=f'C:\\ProgramData\\iAttend\\data\\images\\{self.ui_registration.reg_reference.text()}.png'
+        path=f'C:\\ProgramData\\iFaces\\images\\{self.ui_registration.reg_reference.text()}.png'
         with open(self.ui_registration.reg_filename.text(),'rb') as file:
             img_data=file.read()
             with open(path,'wb') as out_put:
@@ -100,7 +100,7 @@ class Registration(QDialog):
             if details:
                 self.clear_ui()
                 self.update_interfaces_with_details(details)
-                self.ui_registration.image.setPixmap(QPixmap.fromImage(f"C:\\ProgramData\\iAttend\\data\\images\\{reference}.png"))
+                self.ui_registration.image.setPixmap(QPixmap.fromImage(f"C:\\ProgramData\\iFaces\\images\\{reference}.png"))
                 self.ui_registration.image.setScaledContents(True)
             else:
                 self.clear_ui()
@@ -187,7 +187,7 @@ class Registration(QDialog):
             return data_list
 
     def get_path(self):
-        return 'C:\\ProgramData\\iAttend\\data\\database\\attendance_system.db'
+        return 'C:\\ProgramData\\iFaces\\database\\attendance_system.db'
 
     def MoveWindow(self, event):
         if self.isMaximized() == False:

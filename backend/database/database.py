@@ -76,5 +76,5 @@ class Database(QDialog):
         sql = """SELECT name FROM sqlite_master WHERE type = 'table';"""
         my_cursor = cursor.execute(sql)
         my_cursor=my_cursor.fetchall()
-        details = [v[0] for v in my_cursor if v[0] !='sqlite_sequence']
+        details = [v[0] for v in my_cursor if v[0] !='sqlite_sequence' and v[0] !='tb_students' and v[0] !='tb_face_values']
         self.ui.database_tables.addItems(details)

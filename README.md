@@ -1,4 +1,4 @@
-Face Recognition Attendance Tracking System with PySide2 GUI
+## Face Recognition Attendance Tracking System with PySide2 GUI
 
 This GitHub repository contains a comprehensive face recognition-based attendance tracking system with a user-friendly graphical user interface (GUI) built using PySide2. The system utilizes the powerful face-recognition Python library for face detection, OpenCV and NumPy for image processing, SQLite3 as the database management system, and Pandas for exporting attendance records.
 

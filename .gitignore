@@ -1,4 +1,4 @@
 /test_code
 .gitignore
-./build
-./dist
+backend/dist
+backend/build

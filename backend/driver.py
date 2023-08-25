@@ -390,7 +390,6 @@ class MainWindow(QMainWindow):
     def render_student_details(self,student_reference):
         details = self.retreive_student_details(f"SELECT * FROM tb_students WHERE student_reference={student_reference}")
         if details:
-            print(details)
             name = str(details[3]).split(' ')
             self.ui.firstname.setText(name[0])
             self.ui.middlename.setText(name[1])
@@ -398,7 +397,7 @@ class MainWindow(QMainWindow):
             self.ui.refrence.setText(details[1])
             self.ui.index.setText(details[2])
             self.ui.program.setText(str(details[5]).replace('\n',''))
-            path=f'C:\\ProgramData\\iAttend\\data\\images\\{details[1]}.png'
+            path=f'C:\\ProgramData\\iFaces\\images\\{details[1]}.png'
             self.ui.image.setPixmap(QPixmap.fromImage(path))
             self.ui.image.setScaledContents(True)
         else:

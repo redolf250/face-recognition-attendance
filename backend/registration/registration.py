@@ -22,8 +22,6 @@ class Registration(QDialog):
         self.shadow.setColor(QColor(230, 230, 230, 50))
         self.ui_registration.frame.setGraphicsEffect(self.shadow)
 
-       
-
         self.ui_registration.btn_reg_browse.clicked.connect(self.browse_files)
         self.ui_registration.btn_reg_register.clicked.connect(self.register_student)
         self.ui_registration.btn_reg_search.clicked.connect(self.search_student)
@@ -34,7 +32,6 @@ class Registration(QDialog):
         completer.setCaseSensitivity(Qt.CaseInsensitive)
         self.ui_registration.reg_program.setCompleter(completer)
         
-
     def resource_path(self,relative_path):
         path= os.path.abspath(os.path.join(os.path.dirname(__file__),relative_path)) 
         return path

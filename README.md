@@ -51,3 +51,16 @@ To install the application packages before running the main driver.py file, plea
 8. The application will now start running, and you can interact with it as intended.
 
 By following these steps and installing the required packages, you ensure that the application has all the necessary dependencies to function properly.
+
+## Application images
+
+### Home
+![Home](https://github.com/redolf250/face-recognition-attendance/blob/main/images/home.png)
+
+### Report
+![Home](https://github.com/redolf250/face-recognition-attendance/blob/main/images/report.png)
+
+### Search
+![Search](https://github.com/redolf250/face-recognition-attendance/blob/main/images/search.png)
+
+
